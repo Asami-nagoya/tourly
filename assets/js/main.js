@@ -5,10 +5,6 @@ const navbar = document.querySelector("[data-navbar]");
 const navCloseBtn = document.querySelector("[data-nav-close-btn]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
-const searchContent = document.querySelector("[data-search-content]");
-const searchOpenBtn = document.querySelector("[data-nav-close-btn]");
-const searchCloseBtn = document.querySelectorAll("[data-nav-link]");
-
 const navElemArr = [navOpenBtn, navCloseBtn, overlay];
 
 const navToggleEvent = function (elem) {
@@ -22,6 +18,22 @@ const navToggleEvent = function (elem) {
 
 navToggleEvent(navElemArr);
 navToggleEvent(navLinks);
+
+const searchContent = document.querySelector("[data-search-content]");
+const searchOpenBtn = document.querySelector("[data-search-open-btn]");
+const searchCloseBtn = document.querySelector("[data-search-close-btn]");
+
+if (searchOpenBtn) {
+  searchOpenBtn.addEventListener("click", () => {
+    searchContent.classList.add("active");
+  });
+}
+
+if (searchCloseBtn) {
+  searchCloseBtn.addEventListener("click", () => {
+    searchContent.classList.remove("active");
+  });
+}
 
 // header sticky  & go to top
 const header = document.querySelector("[data-header");

@@ -6,7 +6,9 @@
  * #RESET
 \*-----------------------------------*/
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -92,7 +94,9 @@ body {
     background: hsla(0, 0%, 100%, 0.1);
 }
 
-.h1, .h2, .h3 {
+.h1,
+.h2,
+.h3 {
     font-weight: $fw-800;
     font-family: $ff-montserrat;
     text-transform: uppercase;
@@ -103,7 +107,8 @@ body {
     font-size: $fs-1;
 }
 
-.h2, .h3 {
+.h2,
+.h3 {
     color: var(--gunmetal);
 }
 
@@ -208,55 +213,6 @@ body {
             color: inherit;
         }
 
-        /* .search {
-
-            display: none;
-            top: -100%;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-color: aqua;
-            backdrop-filter: blur(16px);
-            padding: 5rem 1.54rem;
-            transform: top .4s;
-
-            &-form {
-                display: flex;
-                align-items: center;
-                column-gap: .5rem;
-                background-color: beige;
-                border: 2px solid #0bd;
-
-                ion-icon {
-                    font-size: $fs-5;
-                    color: #d64f1e;
-                }
-
-                &-input {
-                    width: 100%;
-                    padding-block: 1rem;
-                    background-color: bisque;
-                    color: blanchedalmond;
-                }
-            }
-
-            .close-btn {
-                position: absolute;
-                top: 2rem;
-                right: 2rem;
-                font-size: $fs-5;
-                cursor: pointer;
-            }
-        } */
-
-        .search-input,
-        .close-btn {
-            display: none;
-        }
-
-        .show-search {
-            top: 0;
-        }
 
     }
 
@@ -279,7 +235,7 @@ body {
             .social-link {
                 color: $white;
                 padding: 8px;
-                border: 1px solid hsla(255, 255, 255, 0.3);
+                border: 1px solid hsla(0, 0%, 100%, 0.3);
                 border-radius: 50%;
                 font-size: 15px;
                 transition: $transition;
@@ -290,6 +246,51 @@ body {
             }
         }
     }
+}
+
+.search {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 50%;
+    z-index: 100;
+    background-color: $bright-navy-blue;
+    backdrop-filter: blur(16px);
+    padding: 8rem 1.54rem;
+
+    &-form {
+        display: flex;
+        align-items: center;
+        column-gap: .6rem;
+        background-color: beige;
+        border: 1px solid $bright-navy-blue;
+
+        ion-icon {
+            font-size: $fs-4;
+            color: #d64f1e;
+        }
+
+    }
+
+    &-input {
+        width: 100%;
+        padding-block: .55rem;
+        background-color: bisque;
+        color: blanchedalmond;
+    }
+
+    &-close {
+        color: $white;
+        font-size: $fs-2;
+        position: absolute;
+        top: 2rem;
+        right: 6rem;
+        cursor: pointer;
+    }
+}
+
+.search.active {
+    top: 0;
 }
 
 .navbar {
@@ -761,7 +762,8 @@ body {
                 --ionicon-stroke-width: 40px;
             }
 
-            .contact-link, address {
+            .contact-link,
+            address {
                 font-size: normal;
                 color: $gainsboro;
                 font-size: $fs-5;
